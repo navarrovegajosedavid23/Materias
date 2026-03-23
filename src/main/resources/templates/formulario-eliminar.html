@@ -1,0 +1,5 @@
+<h2>¿Estás seguro de eliminar la materia: <span th:text="${materia.nombre}"></span>?</h2>
+<form th:action="@{/materias/eliminar/{id}(id=${materia.id})}" method="post">
+    <button type="submit">Sí, eliminar</button>
+    <a th:href="@{/materias}">Cancelar</a>
+</form>

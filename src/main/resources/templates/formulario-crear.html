@@ -1,0 +1,5 @@
+<form th:action="@{/materias/guardar}" th:object="${materia}" method="post">
+    <input type="text" th:field="*{nombre}" placeholder="Nombre" required />
+    <input type="number" th:field="*{creditos}" placeholder="Créditos" required />
+    <button type="submit">Guardar</button>
+</form>

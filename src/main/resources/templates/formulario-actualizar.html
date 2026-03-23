@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Materia</title>
+</head>
+<body>
+<h1>Editar Materia</h1>
+
+<!-- Usamos la misma ruta de guardar, el Service ya sabe que si trae ID, debe actualizar -->
+<form th:action="@{/materias/guardar}" th:object="${materia}" method="post">
+
+    <!-- CAMPO OCULTO MUY IMPORTANTE PARA EL ID -->
+    <input type="hidden" th:field="*{id}" />
+
+    <div>
+        <label for="nombre">Nombre de la materia:</label>
+        <input type="text" id="nombre" th:field="*{nombre}" required />
+    </div>
+    <br>
+    <div>
+        <label for="creditos">Créditos:</label>
+        <input type="number" id="creditos" th:field="*{creditos}" required />
+    </div>
+    <br>
+    <button type="submit">Actualizar</button>
+    <a th:href="@{/materias}">Cancelar</a>
+</form>
+</body>
+</html>
